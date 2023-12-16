@@ -20,6 +20,11 @@ library.add(faBars, faGithub);
 
 
 const Header = () => {
+
+
+
+
+
       const [menu, setMenu] = useState(false);
 
       const Menufunc = () => {
@@ -79,30 +84,30 @@ const Header = () => {
           <div className="flex">
             <div>
               <div
-                className={`  overlay min-h-screen bg-blue-950 w-80 pl-5 ${menu ? "hidden" : "block"}`}
+                className={`  overlay min-h-screen bg-blue-950 w-80 pl-5  ${menu ? "hidden" : "block"}`}
               >
                 <h1 className=" text-white text-3xl pb-5 "> <a href="/">
                   𝗗𝗼𝗰𝘂𝗔𝗿𝗲𝗮
                   </a> </h1>
-                <div className="flex gap-4">
+                <div className="flex gap-4 ">
                   <input
                     type="text"
-                    className=" text-white pl-3 bg-transparent outline-none border-2 border-blue-600 border-dotted rounded"
+                    className=" text-white pl-2 bg-transparent outline-none border-2 border-blue-600 border-dotted rounded"
                   />
-                  <div className="bg-blue-500 text-white px-5 py-3 rounded">
+                  <div className="bg-blue-500 text-white px-3 py-2 rounded">
                     <FontAwesomeIcon icon={faSearch} />
                   </div>
                 </div>
     
                 <div className="pt-10 cursor-pointer">
-                  <ul className="text-purple-300 font-bold text-xl pb-16 ">
+                  <ul className="text-purple-300 font-bold text-xl ">
                     <li className="pb-8">
                       {" "}
                       <span onClick={frontendFun}>
                         {" "}
                         FRONTEND{" "}
                         <FontAwesomeIcon
-                          className="absolute left-64"
+                          className="absolute left-60"
                           icon={faChevronDown}
                         />{" "}
                       </span>
@@ -115,7 +120,7 @@ const Header = () => {
                           className="hover:text-violet-600"
                           onClick={() => {
                             handleSelectTab("HTML");
-                            // Menufunc();
+                            Menufunc();
                           }}
                          
                         >
@@ -125,7 +130,7 @@ const Header = () => {
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            // Menufunc();
+                            Menufunc();
                             handleSelectTab("CSS");
                           }}
                         >
@@ -134,7 +139,7 @@ const Header = () => {
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            // Menufunc();
+                            Menufunc();
                             handleSelectTab("JS");
                           }}
                         >
@@ -143,7 +148,7 @@ const Header = () => {
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            // Menufunc();
+                            Menufunc();
                             handleSelectTab("REACT");
                           }}
                         >
@@ -152,7 +157,7 @@ const Header = () => {
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            // Menufunc();
+                            Menufunc();
                             handleSelectTab("TAILWIND");
                           }}
                         >
@@ -161,7 +166,7 @@ const Header = () => {
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            // Menufunc();
+                            Menufunc();
                             handleSelectTab("MATERIAL");
                           }}
                         >
@@ -174,7 +179,7 @@ const Header = () => {
                       <span onClick={Backend}>
                         BACKEND{" "}
                         <FontAwesomeIcon
-                          className="absolute left-64"
+                          className="absolute left-60"
                           icon={faChevronDown}
                         />{" "}
                       </span>
@@ -185,7 +190,7 @@ const Header = () => {
                       >
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("NODE")}
+                          onClick={() => { Menufunc(); handleSelectTab("NODE")}}
                         >
                           NODE JS
                         </li>
@@ -215,7 +220,7 @@ const Header = () => {
                         {" "}
                         CYBER SECURITY{" "}
                         <FontAwesomeIcon
-                          className="absolute left-64"
+                          className="absolute left-60"
                           icon={faChevronDown}
                         />{" "}
                       </span>
@@ -256,7 +261,7 @@ const Header = () => {
                         {" "}
                         BLOCKCHAIN{" "}
                         <FontAwesomeIcon
-                          className="absolute left-64"
+                          className="absolute left-60"
                           icon={faChevronDown}
                         />{" "}
                       </span>
