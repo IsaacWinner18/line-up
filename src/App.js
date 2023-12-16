@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           <h1>Isaac Winner</h1>
+          <Header />
         </p>
         <a
           className="App-link"
