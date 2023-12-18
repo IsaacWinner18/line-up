@@ -196,19 +196,19 @@ const Header = () => {
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("PYTHON")}
+                          onClick={() => {Menufunc(); handleSelectTab("PYTHON")}}
                         >
                           PYTHON
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("JAVA")}
+                          onClick={() => {Menufunc(); handleSelectTab("JAVA")}}
                         >
                           JAVA
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("PHP")}
+                          onClick={() => {Menufunc(); handleSelectTab("PHP")}}
                         >
                           PHP
                         </li>
@@ -231,25 +231,25 @@ const Header = () => {
                       >
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("NETWORK")}
+                          onClick={() => {Menufunc(); handleSelectTab("NETWORK")}}
                         >
                           NETWORK SECURITY
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("CLOUD")}
+                          onClick={() => {Menufunc(); handleSelectTab("CLOUD")}}
                         >
                           CLOUD SECURITY
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("PENETRATION")}
+                          onClick={() => {Menufunc(); handleSelectTab("PENETRATION")}}
                         >
                           PENETRATION TESTING
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("VULNERABILITY")}
+                          onClick={() => {Menufunc(); handleSelectTab("VULNERABILITY")}}
                         >
                           VULNERABILITY MANAGEMENT
                         </li>
@@ -272,25 +272,25 @@ const Header = () => {
                       >
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("CRYPTO")}
+                          onClick={() => {Menufunc(); handleSelectTab("CRYPTO")}}
                         >
                           CRYPTOCURRENCIES
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("SMART")}
+                          onClick={() => {Menufunc(); handleSelectTab("SMART")}}
                         >
                           SMART CONTRACTS
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("DECENTRALIZED")}
+                          onClick={() => {Menufunc(); handleSelectTab("DECENTRALIZED")}}
                         >
                           DECENTRALIZED FINANCE (DeFi)
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => handleSelectTab("SERVICE")}
+                          onClick={() => {Menufunc(); handleSelectTab("SERVICE")}}
                         >
                           BLOCKCHAIN AS A SERVICE (BaaS)
                         </li>
@@ -298,21 +298,21 @@ const Header = () => {
                     </li>
                     <li
                       className="pb-8 hover:text-violet-600"
-                      onClick={() => handleSelectTab("AI")}
+                      onClick={() => {Menufunc(); handleSelectTab("AI")}}
                     >
                       {" "}
                       AI{" "}
                     </li>
                     <li
                       className="pb-8 hover:text-violet-600"
-                      onClick={() => handleSelectTab("ML")}
+                      onClick={() => {Menufunc(); handleSelectTab("ML")}}
                     >
                       {" "}
                       ML{" "}
                     </li>
                     <li
                       className="pb-8 hover:text-violet-600"
-                      onClick={() => handleSelectTab("VR")}
+                      onClick={() => {Menufunc(); handleSelectTab("VR")}}
                     >
                       {" "}
                       VR{" "}
