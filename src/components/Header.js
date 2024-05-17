@@ -24,13 +24,18 @@ const Header = () => {
 
 
 
+const [menu, setMenu] = useState(false);
 
-      const [menu, setMenu] = useState(false);
+  const Menufunc = () => {
+    const mediaQuery = window.matchMedia('(max-width: 1023px)');
 
-      const Menufunc = () => {
-        setMenu(!menu);
-      };
-    
+    if (mediaQuery.matches) {
+      setMenu(!menu);
+    } else {
+      setMenu(true);
+    }
+  };
+
       useEffect(() => {
         const handleResize = () => {
           // Check if the screen width is below a certain threshold (e.g., 1024 pixels)
@@ -117,6 +122,7 @@ const Header = () => {
                         } flex-col gap-4 font-bold text-gray-400   text-base pl-10 py-5`}
                       >
                         <li
+                      
                           className="hover:text-violet-600"
                           onClick={() => {
                             handleSelectTab("HTML");
@@ -190,25 +196,37 @@ const Header = () => {
                       >
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => { Menufunc(); handleSelectTab("NODE")}}
+                          onClick={() => { 
+                            Menufunc(); 
+                            handleSelectTab("NODE")
+                          }}
                         >
                           NODE JS
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("PYTHON")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("PYTHON")
+                          }}
                         >
                           PYTHON
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("JAVA")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("JAVA")
+                          }}
                         >
                           JAVA
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("PHP")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("PHP")
+                          }}
                         >
                           PHP
                         </li>
@@ -231,25 +249,37 @@ const Header = () => {
                       >
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("NETWORK")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("NETWORK")
+                          }}
                         >
                           NETWORK SECURITY
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("CLOUD")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("CLOUD")
+                          }}
                         >
                           CLOUD SECURITY
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("PENETRATION")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("PENETRATION")
+                          }}
                         >
                           PENETRATION TESTING
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("VULNERABILITY")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("VULNERABILITY")
+                          }}
                         >
                           VULNERABILITY MANAGEMENT
                         </li>
@@ -272,25 +302,33 @@ const Header = () => {
                       >
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("CRYPTO")}}
+                          onClick={() => {
+                            Menufunc();
+                             handleSelectTab("CRYPTO")}}
                         >
                           CRYPTOCURRENCIES
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("SMART")}}
+                          onClick={() => {
+                            Menufunc();
+                             handleSelectTab("SMART")}}
                         >
                           SMART CONTRACTS
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("DECENTRALIZED")}}
+                          onClick={() => {
+                            Menufunc(); 
+                            handleSelectTab("DECENTRALIZED")}}
                         >
                           DECENTRALIZED FINANCE (DeFi)
                         </li>
                         <li
                           className="hover:text-violet-600"
-                          onClick={() => {Menufunc(); handleSelectTab("SERVICE")}}
+                          onClick={() => {
+                            Menufunc();
+                             handleSelectTab("SERVICE")}}
                         >
                           BLOCKCHAIN AS A SERVICE (BaaS)
                         </li>
@@ -298,21 +336,27 @@ const Header = () => {
                     </li>
                     <li
                       className="pb-8 hover:text-violet-600"
-                      onClick={() => {Menufunc(); handleSelectTab("AI")}}
+                      onClick={() => {
+                        Menufunc(); 
+                        handleSelectTab("AI")}}
                     >
                       {" "}
                       AI{" "}
                     </li>
                     <li
                       className="pb-8 hover:text-violet-600"
-                      onClick={() => {Menufunc(); handleSelectTab("ML")}}
+                      onClick={() => {
+                        Menufunc(); 
+                        handleSelectTab("ML")}}
                     >
                       {" "}
                       ML{" "}
                     </li>
                     <li
                       className="pb-8 hover:text-violet-600"
-                      onClick={() => {Menufunc(); handleSelectTab("VR")}}
+                      onClick={() => {
+                        Menufunc(); 
+                        handleSelectTab("VR")}}
                     >
                       {" "}
                       VR{" "}
@@ -813,7 +857,7 @@ const Header = () => {
                     <div className="flex flex-col flex-wrap lg:flex-row gap-5">
                       <div className="text-center bg-blue-950 px-5 pt-4 pb-16 rounded-2xl mb-8">
                         <p className="text-purple-100 font-sans font-bold text-2xl pb-5">
-                          DECENTRALIZED FINANCE (DeFi)
+                          DECENTRALIZED <br /> FINANCE (DeFi)
                         </p>
                         <p className="text-purple-300 font-mono text-base pb-2 lg:w-60 ">
                           Unlike most online DeFi guides drowning in complex theory,
@@ -835,7 +879,7 @@ const Header = () => {
                     <div className="flex flex-col flex-wrap lg:flex-row gap-5">
                       <div className="text-center bg-blue-950 px-5 pt-4 pb-16 rounded-2xl mb-8">
                         <p className="text-purple-100 font-sans font-bold text-2xl pb-5">
-                          BLOCKCHAIN AS A SERVICE (BaaS)
+                          BLOCKCHAIN AS A <br /> SERVICE (BaaS)
                         </p>
                         <p className="text-purple-300 font-mono text-base pb-2 lg:w-60 ">
                           Amid web guides laden with intricate Blockchain as a
