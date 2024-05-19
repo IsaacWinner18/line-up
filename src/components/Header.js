@@ -3,7 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-
+// useCallback 
 import {
   faBars,
   faChevronDown,
@@ -20,44 +20,38 @@ library.add(faBars, faGithub);
 
 
 const Header = () => {
-
-
-
-
-const [menu, setMenu] = useState(false);
+  
+  const [menu, setMenu] = useState(true)
 
   const Menufunc = () => {
-    const mediaQuery = window.matchMedia('(max-width: 1023px)');
+    setMenu(true)
+  }
 
-    if (mediaQuery.matches) {
-      setMenu(!menu);
-    } else {
-      setMenu(true);
-    }
-  };
+  const Menufun = () => {
+    setMenu(false)
+  }
 
-      useEffect(() => {
-        const handleResize = () => {
-          // Check if the screen width is below a certain threshold (e.g., 1024 pixels)
-          const isSmallScreen = window.innerWidth < 1024;
-    
-          // Set menu state based on the screen size
-          setMenu(isSmallScreen);
-          // Set other states as needed for small screens
-        };
-    
-        // Initial check on mount
-        handleResize();
-    
-        // Attach the event listener for window resize
-        window.addEventListener("resize", handleResize);
-    
-        // Cleanup the event listener on component unmount
-        return () => {
-          window.removeEventListener("resize", handleResize);
-        };
-      }, []);
-    
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMenu(false);
+      } else if (window.innerWidth < 1024) {
+        setMenu(true)
+      }
+    };
+
+    // Set the initial value based on current window size
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+ 
       const handleSelectTab = (tab) => {
         setSelectedTab(tab);
       };
@@ -89,7 +83,9 @@ const [menu, setMenu] = useState(false);
           <div className="flex">
             <div>
               <div
-                className={`  overlay min-h-screen bg-blue-950 w-80 pl-5  ${menu ? "hidden" : "block"}`}
+                 className={`  overlay min-h-screen bg-blue-950 w-80 pl-5  
+                 ${menu ? "hidden" : "block"}
+                 `}
               >
                 <h1 className=" text-white text-3xl pb-5 "> <a href="/">
                   𝗗𝗼𝗰𝘂𝗔𝗿𝗲𝗮
@@ -126,7 +122,8 @@ const [menu, setMenu] = useState(false);
                           className="hover:text-violet-600"
                           onClick={() => {
                             handleSelectTab("HTML");
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                           }}
                          
                         >
@@ -136,7 +133,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("CSS");
                           }}
                         >
@@ -145,7 +143,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("JS");
                           }}
                         >
@@ -154,7 +153,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("REACT");
                           }}
                         >
@@ -163,7 +163,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("TAILWIND");
                           }}
                         >
@@ -172,7 +173,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("MATERIAL");
                           }}
                         >
@@ -197,7 +199,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => { 
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("NODE")
                           }}
                         >
@@ -206,7 +209,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); } 
                             handleSelectTab("PYTHON")
                           }}
                         >
@@ -215,7 +219,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("JAVA")
                           }}
                         >
@@ -224,7 +229,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("PHP")
                           }}
                         >
@@ -250,7 +256,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("NETWORK")
                           }}
                         >
@@ -259,7 +266,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("CLOUD")
                           }}
                         >
@@ -268,7 +276,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("PENETRATION")
                           }}
                         >
@@ -277,7 +286,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("VULNERABILITY")
                           }}
                         >
@@ -303,7 +313,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                              handleSelectTab("CRYPTO")}}
                         >
                           CRYPTOCURRENCIES
@@ -311,7 +322,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                              handleSelectTab("SMART")}}
                         >
                           SMART CONTRACTS
@@ -319,7 +331,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc(); 
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                             handleSelectTab("DECENTRALIZED")}}
                         >
                           DECENTRALIZED FINANCE (DeFi)
@@ -327,7 +340,8 @@ const [menu, setMenu] = useState(false);
                         <li
                           className="hover:text-violet-600"
                           onClick={() => {
-                            Menufunc();
+                            if (window.innerWidth < 1024) {
+                              Menufunc(); }
                              handleSelectTab("SERVICE")}}
                         >
                           BLOCKCHAIN AS A SERVICE (BaaS)
@@ -337,7 +351,8 @@ const [menu, setMenu] = useState(false);
                     <li
                       className="pb-8 hover:text-violet-600"
                       onClick={() => {
-                        Menufunc(); 
+                        if (window.innerWidth < 1024) {
+                          Menufunc(); } 
                         handleSelectTab("AI")}}
                     >
                       {" "}
@@ -346,7 +361,8 @@ const [menu, setMenu] = useState(false);
                     <li
                       className="pb-8 hover:text-violet-600"
                       onClick={() => {
-                        Menufunc(); 
+                        if (window.innerWidth < 1024) {
+                          Menufunc(); } 
                         handleSelectTab("ML")}}
                     >
                       {" "}
@@ -355,7 +371,8 @@ const [menu, setMenu] = useState(false);
                     <li
                       className="pb-8 hover:text-violet-600"
                       onClick={() => {
-                        Menufunc(); 
+                        if (window.innerWidth < 1024) {
+                          Menufunc(); } 
                         handleSelectTab("VR")}}
                     >
                       {" "}
@@ -374,7 +391,11 @@ const [menu, setMenu] = useState(false);
                 </div>
     
                 <div
-                  onClick={Menufunc}
+                  onClick={() => {
+                    if (window.innerWidth < 1024) {
+                      Menufun();
+                    }
+                  }}
                   className="bar flex justify-end text-white text-3xl lg:hidden"
                 >
                   <FontAwesomeIcon icon={faBars} />

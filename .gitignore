@@ -21,3 +21,27 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+ useEffect(() => {
+    const handleResize = () => {
+      // Check if the screen width is below a certain threshold (e.g., 1024 pixels)
+      const isSmallScreen = window.innerWidth < 1024;
+
+      // Set menu state based on the screen size
+      setMenu(isSmallScreen);
+      // Set other states as needed for small screens
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Attach the event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+    
